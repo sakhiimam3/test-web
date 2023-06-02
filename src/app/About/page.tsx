@@ -26,12 +26,12 @@ const About = () => {
                   thirdProp="#E9004F"
                 />
                 <Heading as="h2" my="20px">
-                MENA's Leading ROI-focused Influencer Marketing Agency.
+                MENA&apos;s Leading ROI-focused Influencer Marketing Agency.``
                 </Heading>
                 <Text color="#6E7CA0" my="15px" >
                   Our group of marketing experts will guide your company with
                   clear direction and actionable steps to achieve its goals and
-                  boost your business's growth in the region.
+                  boost your business&apos;s growth in the region.
                 </Text>
                 <Text color="#6E7CA0" my="15px"> This is made
                   possible by identifying KPIs, goals, and other requirements

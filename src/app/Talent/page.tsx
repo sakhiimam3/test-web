@@ -47,7 +47,7 @@ const Talent = () => {
               </Box>
             </Box>
             {/* right side  */}
-            <Box display="flex" alignItems="center" gap="10px"  bg="#E7E5EA">
+            <Box display="flex" alignItems="center" gap="10px" >
               <Box>
               <Text  fontSize="20px" fontWeight="bold" color="#6E7CA0">
                   Arab Esports Broadcasters
