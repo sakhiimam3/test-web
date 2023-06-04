@@ -12,7 +12,7 @@ const About = () => {
     <>
       <Box py="100px">
         <Container maxW="1280px">
-          <SimpleGrid columns={2} spacing="10">
+          <SimpleGrid columns={2} spacing="10" my="16">
             <Box height="400px" position="relative">
               <Image
                 style={{ height: "full", width: "full" }}

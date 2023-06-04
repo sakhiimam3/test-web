@@ -97,3 +97,33 @@ ul.slick-dots li button:before {
   font-size: 12px; /* Increase the dot size */
   color: rgb(9, 9, 14) !important; /* Change the dot color */
 }
+
+/* scroll bar css  */
+/* Width and height for the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Color for the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Color for the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+}
+
+/* Color for the scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgrey;
+}
+
+/* nav active  */
+.active {
+  color: blue;
+}
+.nav-link:hover {
+  color: "blue";
+}
