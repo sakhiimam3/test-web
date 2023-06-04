@@ -10,7 +10,7 @@ import discover2 from "../assets/images/discover2.png";
 const Talent = () => {
   return (
     <>
-      <Box py="100px">
+      <Box my="20">
         <Container maxW="1280px">
           <Box display="flex" flexDirection="column" alignItems="center">
             <Box display="inline-block">
@@ -20,7 +20,7 @@ const Talent = () => {
                 thirdProp="#EAFAF8"
               />
             </Box>
-            <Heading as="h1" my="10px"  >
+            <Heading as="h1" my="5">
               Discover Our Talents
             </Heading>
             <Text textAlign="center" maxW="600px" color="#6E7CA0">
@@ -30,35 +30,82 @@ const Talent = () => {
             </Text>
           </Box>
           {/* section 2  */}
-          <Box my="25px" display="flex" >
+          <Box my="20" display="flex" gap="10px">
             {/* left side  */}
-            <Box display="flex"  alignItems="center" gap="10px"  bg="#E7E5EA">
-             <Box>
-             <Image src={discover} alt="discoverr" />
-             </Box>
-              <Box>
-                  <Text fontSize="20px" mb="10px" color="#6E7CA0" fontWeight="bold" >
-                  Arab Esports Broadcasters
+            <Box>
+              <Box
+                display="flex"
+                sx={{ border: "1px solid #E7E5EA", height: "250px" }}
+                alignItems="center"
+                borderRadius="10px"
+              >
+                <Box>
+                  <Image src={discover} alt="discoverr" />
+                </Box>
+                <Box>
+                  <Text
+                    fontSize="20px"
+                    mb="5px"
+                    color="#2D3958"
+                    fontWeight="bold"
+                  >
+                    Arab Esports Broadcasters
                   </Text>
-                  <Text>
-                  Experienced play-by-play casters of Arabia Talents will level up your sports events.
+                  <Text
+                    maxW={{ base: "100%", sm: "300px" }}
+                    sx={{ color: "#6E7CA0" }}
+                  >
+                    Experienced play-by-play casters of Arabia Talents will
+                    level up your sports events.
                   </Text>
-                  <ButtonReusable text="MEET THE FACES"  secProp="transparent" thirdProp="#2D3958" forThProp="" />
+                  <Box mt="8">
+                    <ButtonReusable
+                      text="MEET THE FACES"
+                      secProp="transparent"
+                      thirdProp="#2D3958"
+                      forThProp=""
+                    />
+                  </Box>
+                </Box>
               </Box>
             </Box>
-            {/* right side  */}
-            <Box display="flex" alignItems="center" gap="10px" >
-              <Box>
-              <Text  fontSize="20px" fontWeight="bold" color="#6E7CA0">
-                  Arab Esports Broadcasters
+
+            <Box>
+              <Box
+                display="flex"
+                sx={{ border: "1px solid #E7E5EA", height: "250px" }}
+                alignItems="center"
+                borderRadius="10px"
+              >
+                <Box pl="3.5">
+                  <Text
+                    fontSize="20px"
+                    mb="10px"
+                    fontWeight="bold"
+                    color="#2D3958"
+                  >
+                    Middle Eastern Influencers
                   </Text>
-                  <Text>
-                  Experienced play-by-play casters of Arabia Talents will level up your sports events.
+                  <Text
+                    maxW={{ base: "100%", sm: "300px" }}
+                    sx={{ color: "#6E7CA0" }}
+                  >
+                    Arabia Talents connects brands to top influencers, and
+                    content creators in the Middle East region.
                   </Text>
-                  <ButtonReusable text="MEET THE FACES"  secProp="transparent" thirdProp="#2D3958" forThProp="" />
-              </Box>
-              <Box>
-              <Image src={discover2} alt="discoverr" />
+
+                  <Box mt="8">
+                    <ButtonReusable
+                      text="DISCOVER THE LIST"
+                      secProp="transparent"
+                      thirdProp="#2D3958"
+                      forThProp=""
+                    />
+                  </Box>
+                </Box>
+                <Box>
+                  <Image src={discover2} alt="discoverr" />
+                </Box>
               </Box>
             </Box>
           </Box>

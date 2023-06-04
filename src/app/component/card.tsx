@@ -22,7 +22,7 @@ interface CardProps {
 const CardReusable: React.FC<CardProps> = ({ number, heading, text, bkc }) => {
   return (
     <>
-      <Card bg="#fffff" maxW="370px"  px="20px" borderRadius="12px" border="1px" borderWidth="medium" borderColor="#E7E5EA" >
+      <Card bg="#fffff" maxW="370px"  px="20px" borderRadius="12px"  >
         <CardHeader>
           <Box  position="relative">
             <Box
@@ -43,15 +43,16 @@ const CardReusable: React.FC<CardProps> = ({ number, heading, text, bkc }) => {
               letterSpacing="-1"
               top="10px"
               left="-8px"
+            
             >
               {number}
             </Text>
           </Box>
 
-          <Heading size="md"> {heading}</Heading>
+          <Heading size="md" mt="20px"> {heading}</Heading>
         </CardHeader>
         <CardBody>
-          <Text>{text}</Text>
+          <Text color="#6E7CA0">{text}</Text>
         </CardBody>
         <CardFooter>
           <ButtonReusable
