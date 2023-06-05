@@ -1,4 +1,11 @@
-import { Box, Container, Heading, Highlight, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Heading,
+  Highlight,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
 import ButtonReusable from "./button";
 import Image from "next/image";
 import BannerTop from "../assets/images/bannerleft1Top.png";
@@ -9,31 +16,42 @@ import BannerRightBack from "../assets/images/bannerRightBack.png";
 import bannerLeftAbs1 from "../assets/images/bannerLeftAbsolute.png";
 import bannerLeftAbs2 from "../assets/images/bannerleftAbsolue2.png";
 import bannerRightAbs2 from "../assets/images/banRightAbs2.png";
+import { BsMouse } from "react-icons/bs";
+import { Link } from "react-scroll";
 
-const Banner = () => {
+
+const Banner :React.FC = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <>
-      <Box maxW="full" bg="#F5F7FD">
+      <Box maxW="full" bg={colorMode === "light" ? "#F5F7FD" : "black"}>
         <Container maxW="1480">
           <Box
             display="flex"
             justifyContent="space-between"
             alignItems="center"
-            py="10"
+            py={{ base: "28", md: "10" }}
+            flexDirection={{ base: "column", md: "row" }}
+            gap={{ base: "20", md: "0" }}
           >
             <Box position="relative" top="-60px">
               <Image src={BannertoBack} alt="banner" />
               <Box position="absolute" top="0" p="8">
                 <Image className="img" src={BannerTop} alt="banner" />
               </Box>
-              <Box position="absolute" top="3%" right="-10%">
+              <Box
+                position="absolute"
+                top="3%"
+                right={{ base: "-3%", md: "-10%" }}
+              >
                 <Image className="img" src={bannerLeftAbs1} alt="banner" />
               </Box>
               <Box position="absolute" bottom="-180px" right="0">
                 <Image src={BannerBottom} alt="banner" />
               </Box>
             </Box>
-            <Box position="relative">
+            <Box position="relative" mt={{ base: "28", md: "0" }}>
               <Image
                 style={{ position: "absolute", top: "50%", left: "-50px" }}
                 src={bannerLeftAbs2}
@@ -41,7 +59,7 @@ const Banner = () => {
               />
               <Text
                 textAlign="center"
-                color="#6E7CA0"
+                color={colorMode === "light" ? "#6E7CA0" : "white"}
                 _before={{
                   content: "'\\2212'",
                   top: 0,
@@ -63,9 +81,9 @@ const Banner = () => {
               </Text>
               <Heading
                 textAlign="center"
-                fontSize="56px"
+                fontSize={{ base: "20px", md: "56px" }}
                 my="10px"
-                color="#2D3958"
+                color={colorMode === "light" ? "#2D3958" : "white"}
               >
                 Middle East <br />
                 <span className="heading-border">
@@ -75,7 +93,12 @@ const Banner = () => {
                 <br />
                 Talent Agency
               </Heading>
-              <Text textAlign="center" color="#6E7CA0" my="15px">
+              <Text
+                textAlign="center"
+                fontSize={{ base: "14px", md: "16px" }}
+                color={colorMode === "light" ? "#6E7CA0" : "white"}
+                my="15px"
+              >
                 Brands can reach their targeted audiences thanks to our managed{" "}
                 <br />
                 roster of content creators, Esports talents, and social media
@@ -90,8 +113,8 @@ const Banner = () => {
                 />
                 <ButtonReusable
                   text="On-Air Talents"
-                  secProp="transparent"
-                  thirdProp="black"
+                  secProp={colorMode === "light" ? "transparent" : "white"}
+                  thirdProp={colorMode === "light" ? "black" : "black"}
                   forThProp="outline"
                 />
               </Box>
@@ -109,6 +132,11 @@ const Banner = () => {
                 <Image src={bannerRightAbs2} alt="banner" />
               </Box>
             </Box>
+          </Box>
+          <Box py="10" display="flex" justifyContent="center">
+            <Link to="about" smooth={true} duration={500}>
+              <BsMouse size={50} cursor="pointer" />
+            </Link>
           </Box>
         </Container>
       </Box>

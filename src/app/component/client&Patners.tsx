@@ -1,5 +1,5 @@
 "use client";
-import { Box, Container, Heading } from "@chakra-ui/react";
+import { Box, Container, Heading, useColorMode } from "@chakra-ui/react";
 import React from "react";
 import ReusableHeading from "./heading";
 import Talent1 from "../assets/images/talent1.png";
@@ -10,7 +10,8 @@ import Talent5 from "../assets/images/talent5.png";
 import Talent6 from "../assets/images/talent6.png";
 import Image from "next/image";
 
-const Partners = () => {
+const Partners:React.FC = () => {
+  const { colorMode } = useColorMode();
   const images = [Talent1, Talent2, Talent3, Talent4, Talent5, Talent6];
   return (
     <>
@@ -25,14 +26,14 @@ const Partners = () => {
                   thirdProp="#FF7342"
                 />
               </Box>
-              <Heading as="h2" fontWeight="medium">
+              <Heading as="h2" fontWeight="medium" color={colorMode === "light" ? "#2D3958" : 'white'} textAlign={{base:'center'}}>
                 Thank you for supporting our talents
               </Heading>
             </Box>
           </Box>
           <Box
             display="flex"
-            justifyContent="space-between"
+            justifyContent={{base:'center',md:"space-between"}}
             alignItems="center"
             flexWrap="wrap"
             gap="20px"

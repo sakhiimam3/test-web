@@ -1,9 +1,13 @@
+"use client"
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Providers } from "./provider";
 import Navbar from "./component/header";
 import TopBar from "./component/topbar";
 import Footer from "./component/footer";
+import { Box, ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
+import { Link } from "react-scroll";
+import ScrollToTopButton from "./component/scrollTopButton";
 
 // const inter = Inter({ subsets: ['Outfit'] })
 
@@ -20,12 +24,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+      <ChakraProvider>
+      <ColorModeProvider
+        options={{
+          initialColorMode: 'dark', // or 'dark'
+          useSystemColorMode: false,
+        }}
+      >
         <Providers>
           <TopBar />
           <Navbar />
           {children}
+           <ScrollToTopButton />
           <Footer />
+
         </Providers>
+        </ColorModeProvider>
+        
+    </ChakraProvider>
+     
       </body>
     </html>
   );

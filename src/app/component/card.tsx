@@ -8,6 +8,7 @@ import {
   CardHeader,
   Heading,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import { MdPlayArrow } from "react-icons/md";
 import ButtonReusable from "./button";
@@ -20,9 +21,11 @@ interface CardProps {
 }
 
 const CardReusable: React.FC<CardProps> = ({ number, heading, text, bkc }) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <>
-      <Card bg="#fffff" maxW="370px"  px="20px" borderRadius="12px"  >
+      <Card bg={colorMode === "light" ? "#FFFFFF": "white"} maxW="370px"  px="20px" borderRadius="12px"  >
         <CardHeader>
           <Box  position="relative">
             <Box
@@ -38,7 +41,8 @@ const CardReusable: React.FC<CardProps> = ({ number, heading, text, bkc }) => {
             <Text
               fontSize="20px"
               position="absolute"
-              color="#2D3958"
+              color={colorMode === "light" ? "#2D3958": "black"}
+            
               fontWeight="bold"
               letterSpacing="-1"
               top="10px"
@@ -52,7 +56,7 @@ const CardReusable: React.FC<CardProps> = ({ number, heading, text, bkc }) => {
           <Heading size="md" mt="20px"> {heading}</Heading>
         </CardHeader>
         <CardBody>
-          <Text color="#6E7CA0">{text}</Text>
+          <Text color={colorMode === "light" ? "#6E7CA0": "black"}>{text}</Text>
         </CardBody>
         <CardFooter>
           <ButtonReusable

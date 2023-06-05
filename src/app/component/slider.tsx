@@ -1,10 +1,14 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, useColorMode } from "@chakra-ui/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+import { CgArrowLeft, CgArrowRight } from "react-icons/cg";
+import SwiperCore, { Navigation } from 'swiper';
+
+
 import Image from "next/image";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 import ReusableHeading from "./heading";
 import slide1 from "../assets/images/slider1.png";
@@ -14,59 +18,47 @@ import slide4 from "../assets/images/slider4.png";
 import slide5 from "../assets/images/slider1.png";
 
 const images = [slide1, slide2, slide3, slide4, slide5];
+SwiperCore.use([Navigation]);
+const NextButton = () => {
+  return (
+    <Box className="swiper-button-next">
+        <CgArrowRight />
+    </Box>
+  );
+};
 
-const SliderComponent = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    prevArrow: <BsArrowLeft color="black" fontSize="30px" />,
-    nextArrow: <BsArrowRight color="black" fontSize="30px" />,
+const PrevButton = () => {
+  return (
+    <Box className="swiper-button-prev">
+     <CgArrowLeft />
+    </Box>
+  );
+};
+const SliderComponent: React.FC = () => {
 
-    responsive: [
-      {
-        breakpoint: 1920, // large screens
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1280, // medium to large screens
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024, // small to medium screens
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768, // extra small to small screens
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 576, // extra small screens
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const { colorMode } = useColorMode();
+  const breakpoints = {
+    576: {
+      slidesPerView: 1,
+     // Center the slides
+     centeredSlides: true,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+    1280: {
+      slidesPerView: 4,
+    },
+    1920: {
+      slidesPerView: 4,
+    },
   };
 
   return (
-    <Box width="full" my="28" bg="#FFC700">
+    <Box width="full" my="28" bg={colorMode === "light" ? "#FFC700" : "black"}>
       <Container maxW="1280">
         <Box>
           <Box
@@ -81,24 +73,50 @@ const SliderComponent = () => {
               secProp="#0083FF"
               thirdProp="#FFFFFF"
             />
-            <Heading my="3">Best Work Showcase</Heading>
-            <Text textAlign="center" maxW={{ base: "100%", md: "650px" }}>
+            <Heading my="3" color={colorMode === "light" ? "#2D3958" : "white"}>
+              Best Work Showcase
+            </Heading>
+            <Text
+              textAlign="center"
+              maxW={{ base: "100%", md: "650px" }}
+              color={colorMode === "light" ? "#6E7CA0" : "white"}
+            >
               Driven by our passion for the industry, and our team’s, Arabia
               Talents have created some of the most engaging influencer
               campaigns in gaming, sports, technology and more.
             </Text>
           </Box>
-          <Slider {...settings}>
+
+          <Swiper
+            
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination= {{
+              el: '.swiper-pagination',
+              clickable: true,
+            }}
+            breakpoints={breakpoints}
+            spaceBetween={10} // Adjust as needed
+          >
             {images.map((image, index) => (
-              <Box py="20" key={index} mx="20px">
-                <Image
-                  style={{ width: "280px" }}
-                  src={image}
-                  alt={`Image ${index + 1}`}
-                />
-              </Box>
+              <SwiperSlide key={index}>
+                <Box
+                  py={{ base: "10", md: "20" }}
+                  maxWidth={{ base: "70%", md: "90%" }}
+                >
+                  <Image src={image} alt={`Image ${index + 1}`} />
+                </Box>
+              </SwiperSlide>
             ))}
-          </Slider>
+            <Box className="swiper-button-next">
+              <CgArrowRight />
+            </Box>
+            <Box className="swiper-button-prev">
+              <CgArrowLeft />
+            </Box>
+          </Swiper>
         </Box>
       </Container>
     </Box>

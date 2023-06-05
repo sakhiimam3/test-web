@@ -1,15 +1,16 @@
 "use client";
-import { Box, Button, Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Heading, Text, useColorMode } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import Brand from "../assets/images/brand.png";
-import ReusableHeading from "../component/heading";
 import ButtonReusable from "../component/button";
-const Contact = () => {
+const Contact:React.FC = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <>
       <Box my="20">
-        <Container maxW="1280" position="relative">
+        <Container maxW="1280" position="relative" py={{base:'16',md:'0'}}>
           <Image
             style={{ width: "100%", height: "100%" }}
             src={Brand}
@@ -21,14 +22,16 @@ const Contact = () => {
             left="50%"
             top="50%"
             transform="translate(-50%, -50%)"
+            
           >
-            <Heading as="h2" fontSize="28" mb="5">
+            <Heading as="h2" fontSize={{base:'16px',md:'28'}}  color={colorMode === "light" ? "#2D3958" : 'white'} mb="5">
               We've helped brands of all kinds and businesses of every size grow
               their online presense
             </Heading>
             <Text
               mb="5"
-              color="#6E7CA0"
+              
+              color={colorMode === "light" ? "#6E7CA0" : 'white'}
               textTransform="capitalize"
               fontWeight="500"
             >

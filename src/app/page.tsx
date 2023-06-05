@@ -11,7 +11,7 @@ import Report from "./component/report";
 import SliderComponent from "./component/slider";
 import styles from "./page.module.css";
 
-export default function Home() {
+const Home : React.FC=()=> {
   return (
     <>
       <Banner />
@@ -20,10 +20,12 @@ export default function Home() {
       <Talent />
       <OurVedio />
       <SliderComponent />
-      <Channels />
+      <Channels /> 
       <Report />
-      <Partners />
-      <Contact />
+      <Partners /> 
+      <Contact /> 
     </>
   );
 }
+
+export default Home

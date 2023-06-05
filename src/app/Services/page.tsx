@@ -1,9 +1,14 @@
 "use client";
-import { Box, Container, Text, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Container, Text, Heading, SimpleGrid, useColorMode } from "@chakra-ui/react";
 import React from "react";
 import ReusableHeading from "../component/heading";
 import CardReusable from "../component/card";
-export default function Services() {
+
+
+
+const Services : React.FC =()=> {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   const cardData = [
     {
       number: "01",
@@ -26,7 +31,7 @@ export default function Services() {
   ];
   return (
     <>
-      <Box bg="#F9FAFB" py="100px">
+      <Box bg={colorMode === "light" ? "#F9FAFB" : 'black'} py="100px">
         <Container maxW="1280px">
           <Box display="flex" flexDirection="column" alignItems="center">
             <Box display="inline-block">
@@ -36,10 +41,10 @@ export default function Services() {
                 thirdProp="#0083FF"
               />
             </Box>
-            <Heading as="h1" my="10px">
+            <Heading color={colorMode === "light" ? "#2D3958" : 'white'} as="h1" my="20px" textAlign={{base:'center',md:'start'}} fontSize={{base:'20px',md:'20'}}>
               We’re Offering Diverse Influencer Services
             </Heading>
-            <Text textAlign="center" maxW="600px" color="#6E7CA0">
+            <Text textAlign="center" maxW="600px"  color={colorMode === "light" ? "#6E7CA0" : 'white'}>
               Arabia Talents is an agency that offers 360° marketing and
               operation services to brands seeking to increase their presence in
               the Arab world.
@@ -49,8 +54,10 @@ export default function Services() {
           <Box
             my="50px"
             display="flex"
-            justifyContent="space-between"
-            gap="10px"
+            justifyContent={{base:'center',md:'between'}}
+            alignItems={{base:'center',md:'between'}}
+            gap={{base:'16',md:'10'}}
+            flexDirection={{base:'column',md:'row'}}
           >
             {cardData.map((item, index) => (
               <CardReusable
@@ -67,3 +74,6 @@ export default function Services() {
     </>
   );
 }
+
+
+export default Services

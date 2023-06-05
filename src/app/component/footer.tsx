@@ -13,13 +13,13 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-const Footer = () => {
+const Footer:React.FC= () => {
   return (
     <>
       <Box width="full" sx={{ backgroundColor: "#292F3A", color: "white" }}>
         <Container maxW="1280">
-          <Box display="flex" justifyContent="center" py="20" gap="10">
-            <Box width="40%">
+          <Box display="flex" justifyContent="center" flexDirection={{base:'column',md:'row'}} py="20" gap="10">
+            <Box maxW={{base:"100%",md:'40%'}}>
               <Box display="flex" justifyContent="center" gap="10" mb="5">
                 <Link href="#">Find Talent</Link>
                 <Link href="#">Case Studies</Link>
@@ -30,10 +30,10 @@ const Footer = () => {
                 &copy; 2022 Arabia Talents, All rights reserved.
               </Text>
             </Box>
-            <Box width="20%" display="flex" justifyContent="center">
+            <Box  maxW={{base:"100%",md:'20%'}} display="flex" justifyContent="center" >
               <Image src={Logo} alt="logo" />
             </Box>
-            <Box width="40%">
+            <Box  maxW={{base:"100%",md:'40%'}}>
               <OrderedList
                 sx={{ listStyle: "none" }}
                 display="flex"
