@@ -79,8 +79,6 @@ const { colorMode } = useColorMode();
             <Link
               href="/Services"
               className={`nav-link ${pathname === "/Services" ? "active" : ""}`}
-          
-
             >
               Services
             </Link>
@@ -88,7 +86,7 @@ const { colorMode } = useColorMode();
               <Menu>
                 <MenuButton
                   as={Button}
-                  bg="transparent"
+                  bg="none"
                   color={colorMode ==='light'? "#2D3958":'"black"'}
                   rightIcon={<RiArrowDownSLine />}
                 >

@@ -1,9 +1,10 @@
 "use client";
-import { Box, Button, Container, Heading, Text, useColorMode } from "@chakra-ui/react";
+import { Box,  Container, Heading, Text, useColorMode } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import Brand from "../assets/images/brand.png";
 import ButtonReusable from "../component/button";
+import Metadata from "../component/metaData";
 const Contact:React.FC = () => {
   const { colorMode } = useColorMode();
 

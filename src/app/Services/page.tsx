@@ -3,6 +3,7 @@ import { Box, Container, Text, Heading, SimpleGrid, useColorMode } from "@chakra
 import React from "react";
 import ReusableHeading from "../component/heading";
 import CardReusable from "../component/card";
+import Metadata from "../component/metaData";
 
 
 
@@ -31,6 +32,7 @@ const Services : React.FC =()=> {
   ];
   return (
     <>
+    <Metadata title="services"/>
       <Box bg={colorMode === "light" ? "#F9FAFB" : 'black'} py="100px">
         <Container maxW="1280px">
           <Box display="flex" flexDirection="column" alignItems="center">
