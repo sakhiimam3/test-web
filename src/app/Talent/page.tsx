@@ -6,14 +6,12 @@ import ReusableHeading from "../component/heading";
 import ButtonReusable from "../component/button";
 import discover from "../assets/images/dicover1.png";
 import discover2 from "../assets/images/discover2.png";
-import Metadata from "../component/metaData";
 
 const Talent:React.FC = () => {
   const { colorMode } = useColorMode();
 
   return (
     <>
-    <Metadata title="Talents"/>
       <Box my="20">
         <Container maxW="1280px">
           <Box display="flex" flexDirection="column"  alignItems="center">
