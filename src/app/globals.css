@@ -85,6 +85,32 @@ a {
 }
 
 /* slider css  */
+.leftArrow{
+  position: absolute;
+  top: 46%;
+  left: -3%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  cursor:pointer
+}
+.rightArrow{
+  position: absolute;
+  top: 46%;
+  right: -3%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  cursor: pointer;
+}
 ul.slick-dots {
   bottom: 20px; /* Adjust the position of the dots */
 }
@@ -126,4 +152,40 @@ ul.slick-dots li button:before {
 }
 .nav-link:hover {
   color: "blue";
+}
+
+
+@media(max-width : 576px){
+      .leftArrow{
+           left:5%
+      }
+      .rightArrow{
+        right:5%
+   }
+}
+
+@media(max-width : 792px){
+  .leftArrow{
+    left:1%
+}
+.rightArrow{
+ right:1%
+}
+}
+
+@media(max-width : 992px){
+  .leftArrow{
+    left:1%
+}
+.rightArrow{
+ right:1%
+}
+}
+@media(max-width : 1280px){
+  .leftArrow{
+    left:-1%
+}
+.rightArrow{
+ right:-1%
+}
 }

@@ -5,8 +5,7 @@ import { Providers } from "./provider";
 import Navbar from "./component/header";
 import TopBar from "./component/topbar";
 import Footer from "./component/footer";
-import { Box, ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
-import { Link } from "react-scroll";
+import {  ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
 import ScrollToTopButton from "./component/scrollTopButton";
 
 // const inter = Inter({ subsets: ['Outfit'] })
@@ -27,7 +26,7 @@ export default function RootLayout({
       <ChakraProvider>
       <ColorModeProvider
         options={{
-          initialColorMode: 'dark', // or 'dark'
+         
           useSystemColorMode: false,
         }}
       >

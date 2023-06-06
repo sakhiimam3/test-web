@@ -5,6 +5,7 @@ import { FaFacebookF, FaInstagram, FaLinkedin, FaTiktok, FaTwitter, FaYoutube } 
 
 const TopBar: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  console.log(colorMode,"cc")
 
   const handleColorModeToggle = () => {
     toggleColorMode();
@@ -38,7 +39,7 @@ const TopBar: React.FC = () => {
           <Box display="flex" justifyContent="center" alignItems="center">
             <Stack direction="row" alignItems="center">
               <Text color={colorMode === "light"? "#6E7CA0": "white"} >Light</Text>
-              <Switch colorScheme="blue" size="md" onChange={handleColorModeToggle} />
+              <Switch isChecked={colorMode === "dark"} colorScheme="blue" size="md" onChange={handleColorModeToggle} />
               <Text color={colorMode === "light"? "#6E7CA0": "white"} >Dark</Text>
             </Stack>
           </Box>

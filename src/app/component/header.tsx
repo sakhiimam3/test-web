@@ -202,7 +202,7 @@ const { colorMode } = useColorMode();
                         >
                           Talents
                         </MenuButton>
-                        <MenuList>
+                        <MenuList       color={colorMode ==='light'? "#2D3958":'"black"'}>
                           <MenuItem>Download</MenuItem>
                           <MenuItem>Create a Copy</MenuItem>
                           <MenuItem>Mark as Draft</MenuItem>
